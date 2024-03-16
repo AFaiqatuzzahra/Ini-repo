@@ -9,7 +9,7 @@ Tipe data adalah cara untuk mengelompokkan dan mengklasifikasikan data berdasark
 
 ## Guided 
 
-### 1. [Nama Topik]
+### 1. Tipe Data Primitif
 
 ```C++
 #include <iostream>
