@@ -151,7 +151,7 @@ int main() {
 kode diatas digunakan untuk menghitung luas dan keliling persegi panjang berdasarkan nilai panjang dan lebar yang dimasukkan oleh pengguna. Hasil perhitungan kemudian ditampilkan ke layar
 
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+![alt text]("D:\Materi Sains Data Sem 2\Praktikum Algoritma dan Struktur Data\Praktikum Struktur Data dan Algo\Modul-1\Screenshot (27).png"?raw=true)
 
 Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
