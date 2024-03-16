@@ -153,10 +153,79 @@ kode diatas digunakan untuk menghitung luas dan keliling persegi panjang berdasa
 #### Output:
 ![Screenshot (27)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/f4a6d1dd-c183-4c43-aa1d-0f3dc6e29da5)
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+![Screenshot (28)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/098bb294-b923-44b9-b044-40f843acb67c)
+
+### 2. Jelaskan fungsi dari class dan struct secara detail dan berikan contoh programnya
+Class dan struct adalah dua struktur bahasa pemrograman C++ yang digunakan untuk mendefinisikan tipe data baru. Keduanya memungkinkan Anda untuk mengelompokkan data dan fungsi terkait bersama-sama, dan membuat objek dari tipe data tersebut.
+Class adalah  blue print atau serangkaian instruksi untuk membangun jenis objek tertentu. Ini adalah konsep dasar Pemrograman Berorientasi Objek yang berkisar pada entitas kehidupan nyata. Kelas di a bahasa pemrograman menentukan bagaimana suatu objek akan berperilaku dan apa isi objek tersebut.
+structure adalah  tipe data yang ditentukan pengguna yang menggabungkan item data yang terkait secara logis dari tipe data berbeda seperti float, char, int, dll., secara bersamaan.
+```C++
+#include <iostream>
+#include <string>
+
+// Definisi class Person
+class Person {
+private: // Bagian private, hanya dapat diakses dari dalam class
+    std::string name;
+    int age;
+
+public: // Bagian public, dapat diakses dari luar class
+    // Constructor
+    Person(std::string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    // Method untuk menampilkan informasi
+    void displayInfo() {
+        std::cout << "Name: " << name << std::endl;
+        std::cout << "Age: " << age << std::endl;
+    }
+
+    // Method untuk mengatur usia
+    void setAge(int newAge) {
+        age = newAge;
+    }
+};
+
+int main() {
+    // Membuat objek dari class Person
+    Person person1("Afifah", 18);
+
+    // Memanggil method untuk menampilkan informasi
+    person1.displayInfo(); // Output: Name: Afifah, Age: 18
+
+    // Mengatur usia baru
+    person1.setAge(19);
+
+    // Menampilkan informasi setelah mengatur usia
+    person1.displayInfo(); // Output: Name: Afifah, Age: 19
+
+    return 0;
+}
+```
+Kode ini menunjukkan cara membuat class dengan anggota data, constructor, dan method. Class untuk mengelompokkan data dan fungsionalitas terkait, dan membuat objek dengan data dan perilaku yang spesifik.
+### Output:
+![Screenshot (29)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/d88cd53b-c546-44d8-88fe-2b80725cc59d)
+
+### Full code screenshot:
+![Screenshot (30)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/b3d627f8-eb0d-48c9-b026-8d18f9d7fcf2)
+
+### 3. Buat dan jelaskan program menggunakan fungsi map dan jelaskan perbedaan dari array dengan map.
+Perbedaan Array dan Map adalah
+Array
+- Akses berdasarkan indeks
+- Elemen dalam array memiliki urutan yang tetao sesuai dengan indeksnya
+- Tipe data yang Homogen
+Map
+- Akses berdasarkan Key
+- Elemen dalam map tidak memiliki urutan tetap
+- Tipe data Heterogen
+```C++
+
+```
 
 
 ## Kesimpulan
