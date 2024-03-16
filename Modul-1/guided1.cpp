@@ -1,23 +1,24 @@
 #include <iostream>
-using namespace std ;
-main()
-{
-    char op;
-    float num1, num2;
-    cout << "masukkan operator:";
-    cin >> op ;
-    cout << "masukkan angka 1 & 2";
-    cin >>  num1 >> num2;
-    switch(op)
-    {
-    case '+':
-        cout << num1 + num2;
-        break;
-    case '-':
-        cout << num1 - num2;
-        break;
-    default:
-        cout << "Error! operator is not correct";
-    }
-    return 0;
+
+using namespace std;
+
+int main() {
+  // Deklarasi variabel
+  int panjang, lebar;
+  float luas, keliling;
+
+  // Memasukkan nilai panjang dan lebar
+  cout << "Masukkan nilai panjang: ";
+  cin >> panjang;
+  cout << "Masukkan nilai lebar: ";
+  cin >> lebar;
+
+  // Menghitung luas dan keliling
+  luas = panjang * lebar;
+  keliling = 2 * (panjang + lebar);
+
+  // Menampilkan hasil
+  cout << "Luas persegi panjang: " << luas << endl;
+  cout << "Keliling persegi panjang: " << keliling << endl;
+  return 0;
 }
