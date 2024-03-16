@@ -151,7 +151,7 @@ int main() {
 kode diatas digunakan untuk menghitung luas dan keliling persegi panjang berdasarkan nilai panjang dan lebar yang dimasukkan oleh pengguna. Hasil perhitungan kemudian ditampilkan ke layar
 
 #### Output:
-![alt text]("D:\Materi Sains Data Sem 2\Praktikum Algoritma dan Struktur Data\Praktikum Struktur Data dan Algo\Modul-1\Screenshot (27).png"?raw=true)
+![Screenshot (27)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/f4a6d1dd-c183-4c43-aa1d-0f3dc6e29da5)
 
 Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
