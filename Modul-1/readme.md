@@ -224,13 +224,43 @@ Map
 - Elemen dalam map tidak memiliki urutan tetap
 - Tipe data Heterogen
 ```C++
+#include <iostream>
+#include <map>
+#include <string>
 
+int main() {
+    // Membuat map untuk menyimpan nama dan umur
+    std::map<std::string, int> ageMap;
 
+    // Menambahkan beberapa entri ke dalam map
+    ageMap["John"] = 30;
+    ageMap["Ali"] = 25;
+    ageMap["Ben"] = 35;
+
+    // Menampilkan umur seseorang
+    std::cout << "Umur John: " << ageMap["John"] << std::endl;
+    std::cout << "Umur Alice: " << ageMap["Ali"] << std::endl;
+
+    // Mengubah umur seseorang
+    ageMap["John"] = 40;
+
+    // Menampilkan umur setelah diubah
+    std::cout << "Umur John setelah diubah: " << ageMap["John"] << std::endl;
+
+    return 0;
+}
 ```
+Kode di atas menunjukkan cara untuk membuat map, menambahkan entri, mengakses value, dan mengubah value dalam map.
 
+### Output
+![Screenshot (32)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/cc74bc7c-19f4-4079-9a9c-0b8c78cc9507)
+
+### Full Code Screenshot
+![Screenshot (32)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/46bb131d-c7bb-4867-a4eb-172c763cf647)
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Tipe data adalah elemen penting dalam pemrograman yang membantu programmer untuk bekerja dengan data secara terstruktur dan efisien. Memahami jenis-jenis tipe data dan penggunaannya dengan tepat akan meningkatkan kualitas dan performa program yang dibuat.
 
 ## Referensi
-[1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.
+Rachmat, Antonius. (2011). Algoritma dan Pemrograman dengan Bahasa C: Konsep, Teori, dan Implementasi. 
+
