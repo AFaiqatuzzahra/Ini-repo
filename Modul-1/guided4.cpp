@@ -8,12 +8,12 @@ int main() {
 
     // Menambahkan beberapa entri ke dalam map
     ageMap["John"] = 30;
-    ageMap["Alice"] = 25;
-    ageMap["Bob"] = 35;
+    ageMap["Ali"] = 25;
+    ageMap["Ben"] = 35;
 
     // Menampilkan umur seseorang
     std::cout << "Umur John: " << ageMap["John"] << std::endl;
-    std::cout << "Umur Alice: " << ageMap["Alice"] << std::endl;
+    std::cout << "Umur Ali: " << ageMap["Ali"] << std::endl;
 
     // Mengubah umur seseorang
     ageMap["John"] = 40;
