@@ -1189,4 +1189,120 @@ Program ini menyediakan serangkaian fungsi yang lengkap untuk mengelola data mah
 ### 1. Buatlah menu untuk menambahkan, mengubah, menghapus, dan melihat Nama dan  NIM mahasiswa!
 
 #### Output:
-- Tampilan Menu:
+-Tampilan Menu
+![Screenshot (113)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/0ded5a33-01f8-486e-8a6d-34b598c1fb70)
+
+- Tampilan Operasi Tambah:
+
+-Tambah Depan
+
+![Screenshot (114)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/f99f3b3a-2f08-4676-b6e0-360c0cd52d29)
+
+-Tambah Belakang
+
+![Screenshot (115)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/65b9cb10-50f9-4632-939e-75dd58d53c2b)
+
+
+-Tambah Tengah
+
+![Screenshot (116)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/c5f85907-153b-413d-a0b7-0b0c35fd3522)
+
+
+- Tampilan Operasi Ubah:
+
+-Ubah Depan
+
+![Screenshot (117)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/85d2c121-69bf-4b10-8bab-66923e44c953)
+
+-Ubah Belakang
+
+![Screenshot (118)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/16cb74fc-a7cc-4afe-8bff-2d2c83965732)
+
+
+-Ubah Tengah
+
+![Screenshot (119)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/5a033e77-58ee-42ac-b2ca-224f2befdc54)
+
+- Tampilan Operasi Tampilkan:
+
+![Screenshot (121)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/2df537f9-81d4-4c23-b40c-8502e6247dfc)
+
+- Tampilan Operasi Hapus:
+  
+-Hapus Belakang
+
+![Screenshot (121)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/62a81e2f-a143-44ad-89d4-43edcb48bb5d)
+
+-Hapus Tengah
+
+
+- Menampilkan Operasi Hapus List:
+
+
+- Menampilkan Operator Keluar
+
+
+#### Full code Screenshot:
+![Screenshot (122)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/2991e44c-cc3c-433f-8278-6f8bb817b724)
+
+
+### 2. Setelah membuat menu tersebut, masukkan data sesuai urutan berikut, lalu  tampilkan data yang telah dimasukkan. (Gunakan insert depan, belakang atau tengah) 
+
+#### Output:
+- Menggunakan operator 'Tambah Depan' untuk data ke-1
+
+- Menggunakan operator 'Tambah Belakang'' untuk data ke-10 atau data akhir
+
+- Menggunakan operator 'Tambah Tengah' untuk data selain ke-1 dan ke-10
+
+- Menampilkan data
+  
+#### Full code Screenshot:
+
+
+### 3. Lakukan perintah berikut:  
+
+
+#### Output:
+- a. Tambahkan data berikut diantara Farrel dan Denis: Wati 2330004 
+
+
+- b. Hapus data Denis 
+
+
+- c. Tambahkan data berikut di awal: Owi 2330000 
+
+
+- d. Tambahkan data berikut di akhir: David 23300100 
+
+
+- e. Ubah data Udin menjadi data berikut: Idin 23300045
+
+
+
+- F. Ubah data terakhir menjadi berikut: Lucy 23300101
+
+
+
+- g. Hapus data awal 
+
+
+Disini kita pilih operator 7 yaitu 'Hapus Depan' untuk menghapus data awal.
+
+- h. Ubah data awal menjadi berikut: Bagas 2330002 
+
+
+- i. Hapus data akhir
+
+- j. Tampilkan seluruh data
+
+
+#### Full code Screenshot:
+
+## Kesimpulan
+
+
+## Referensi
+[1] GeeksforGeeks, “Linked List Implementation in C,” GeeksforGeeks, Jan. 17, 2023. https://www.geeksforgeeks.org/linked-list-implementation-in-c-sharp/
+
+[2] H. Sismoro, K. Iskandar, Struktur Data & Pemrograman Dengan Pascal. Indonesia: Penerbit Andi, 2004.
