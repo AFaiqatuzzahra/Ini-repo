@@ -1234,12 +1234,13 @@ Program ini menyediakan serangkaian fungsi yang lengkap untuk mengelola data mah
 ![Screenshot (121)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/62a81e2f-a143-44ad-89d4-43edcb48bb5d)
 
 -Hapus Tengah
-
+![Screenshot (129)1](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/a464e198-cab8-44ea-9f47-846e142b3034)
 
 - Menampilkan Operasi Hapus List:
-
+![Screenshot (130)1](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/144e7180-51d1-41cc-b4b8-27ddcb4d3207)
 
 - Menampilkan Operator Keluar
+![Screenshot (130)2](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/c420034a-f19e-499e-ac32-b749c045418a)
 
 
 #### Full code Screenshot:
@@ -1250,56 +1251,67 @@ Program ini menyediakan serangkaian fungsi yang lengkap untuk mengelola data mah
 
 #### Output:
 - Menggunakan operator 'Tambah Depan' untuk data ke-1
+![Screenshot (128)1](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/b0838810-19b5-4569-bbd9-1d7616b3d296)
 
 - Menggunakan operator 'Tambah Belakang'' untuk data ke-10 atau data akhir
+![Screenshot (128)2](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/3fd8ac4c-73ba-4aa2-bc8e-0e377c8e93de)
 
 - Menggunakan operator 'Tambah Tengah' untuk data selain ke-1 dan ke-10
+![Screenshot (128)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/2751e9a8-df21-45a0-86ea-19b346a4924c)
+![Screenshot (127)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/60353298-5df2-4548-b8b0-58fb54e41d69)
+![Screenshot (126)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/2842a4f7-551f-44f6-a6bb-bc4e96dd5b21)
+![Screenshot (125)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/67ae39dd-3890-4c8b-b622-4106f5ee5a13)
+![Screenshot (124)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/4dfc597a-a47a-4dda-9596-807c1641dd07)
 
 - Menampilkan data
+![Screenshot (123)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/aa0f42d4-afd1-44fc-95e2-6e18be34135f)
+
   
 #### Full code Screenshot:
-
+![Screenshot (122)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/a999cead-8ac8-4d47-9922-8a65187a6d3c)
 
 ### 3. Lakukan perintah berikut:  
 
-
 #### Output:
 - a. Tambahkan data berikut diantara Farrel dan Denis: Wati 2330004 
-
+![Screenshot (132)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/91931304-261a-4ae1-aa90-e55acbd18692)
 
 - b. Hapus data Denis 
-
+![Screenshot (133)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/568426df-6e01-4009-8396-37618d46c2f0)
 
 - c. Tambahkan data berikut di awal: Owi 2330000 
-
+![Screenshot (134)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/d7b4f9b9-e9f7-40c1-bcc9-101edcc3e1d6)
 
 - d. Tambahkan data berikut di akhir: David 23300100 
-
+![Screenshot (135)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/fda5e2fa-8d52-44f7-ab6b-b541e91cccfc)
 
 - e. Ubah data Udin menjadi data berikut: Idin 23300045
-
+![Screenshot (136)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/d6a87cce-3545-4f0c-ae6c-a8f1c22223fa)
 
 
 - F. Ubah data terakhir menjadi berikut: Lucy 23300101
-
+![Screenshot (137)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/e10fc73c-bec8-4bfc-b4ea-15b8197986fb)
 
 
 - g. Hapus data awal 
-
+![Screenshot (138)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/937e315a-ba20-4926-b349-e30c9391bea0)
 
 Disini kita pilih operator 7 yaitu 'Hapus Depan' untuk menghapus data awal.
 
 - h. Ubah data awal menjadi berikut: Bagas 2330002 
-
+![Screenshot (139)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/6858a307-ce69-47dc-a2c7-8167343db146)
 
 - i. Hapus data akhir
+![Screenshot (140)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/0dec6115-b6dd-4d74-831e-2efb0957f858)
 
 - j. Tampilkan seluruh data
-
+![Screenshot (131)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/d8c87603-27fb-4e5e-8383-a2f9490ffb6e)
 
 #### Full code Screenshot:
+![Screenshot (131)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/d8c87603-27fb-4e5e-8383-a2f9490ffb6e)
 
 ## Kesimpulan
+Kesimpulan pada materi kali ini adalah saya mengetahui bahwa Linked list merupakan struktur data yang fleksibel dan efisien untuk melakukan operasi insersi dan penghapusan. Memahami konsep linked list memberikan dasar yang kuat untuk mempelajari struktur data yang lebih kompleks.
 
 
 ## Referensi
