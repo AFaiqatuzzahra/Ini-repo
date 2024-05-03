@@ -365,7 +365,7 @@ Dari output yang dihasilkan kita bisa memasukkan kalimat yang kita maksud minima
 ### Full Screenshot
 ![Screenshot (144)](https://github.com/AFaiqatuzzahra/Ini-repo/assets/152428747/f9511e66-02fb-46be-95e6-866fc17f92bc)
 
-
-[1]I. Kandel, M. Castelli, and A. Popovič, “Comparing stacking ensemble techniques to improve musculoskeletal fracture image classification,” Journal of Imaging, vol. 7, no. 6, p. 100, Jun. 2021, doi: 10.3390/jimaging7060100.
-[2]M. Verdi, A. Sami, J. Akhondali, F. Khomh, G. Uddin, and A. K. Motlagh, “An Empirical Study of C++ Vulnerabilities in Crowd-Sourced Code Examples,” IEEE Transactions on Software Engineering, pp. 1–1, 2020, doi: https://doi.org/10.1109/TSE.2020.3023664.
-[3]Educative, “Stack (Implementation) - data structures for coding interviews in C++,” Educative. https://www.educative.io/courses/data-structures-coding-interviews-cpp/stack-implementation
+### Daftar Pustaka
+[1] I. Kandel, M. Castelli, and A. Popovič, “Comparing stacking ensemble techniques to improve musculoskeletal fracture image classification,” Journal of Imaging, vol. 7, no. 6, p. 100, Jun. 2021, doi: 10.3390/jimaging7060100.
+[2] M. Verdi, A. Sami, J. Akhondali, F. Khomh, G. Uddin, and A. K. Motlagh, “An Empirical Study of C++ Vulnerabilities in Crowd-Sourced Code Examples,” IEEE Transactions on Software Engineering, pp. 1–1, 2020, doi: https://doi.org/10.1109/TSE.2020.3023664.
+[3] Educative, “Stack (Implementation) - data structures for coding interviews in C++,” Educative. https://www.educative.io/courses/data-structures-coding-interviews-cpp/stack-implementation
