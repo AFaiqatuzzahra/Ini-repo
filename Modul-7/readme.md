@@ -147,7 +147,7 @@ Dari output diatas diketahui bahwa, awalnya dimulai dari stack kosong(array buku
 #include <iostream>
 using namespace std;
 
-char array[5 * 26]; // Assuming maximum sentence length is 26 characters
+char array[5 * 26]; 
 int maksimal = 5 * 26, top = 0;
 
 bool isFull() {
@@ -176,7 +176,6 @@ void popArrayBuku() {
 }
 
 bool isPalindrome(string sentence) {
-    // Convert sentence to lowercase and remove non-alphanumeric characters
     string processedSentence;
     for (char c : sentence) {
         if (isalnum(c)) {
@@ -184,12 +183,10 @@ bool isPalindrome(string sentence) {
         }
     }
 
-    // Push characters into the stack
     for (char c : processedSentence) {
         pushArray(c);
     }
 
-    // Check if characters are the same when popped from both ends
     int i = 0, j = top - 1;
     while (i <= j) {
         if (array[i] != array[j]) {
@@ -203,7 +200,6 @@ bool isPalindrome(string sentence) {
 }
 
 int main() {
-    // ... (rest of the code remains the same)
 
     string sentence;
     cout << "Masukkan kalimat: ";
@@ -214,8 +210,6 @@ int main() {
     } else {
         cout << sentence << " bukan palindrom" << endl;
     }
-
-    // ... (rest of the code remains the same)
 
     return 0;
 }
