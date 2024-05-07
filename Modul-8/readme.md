@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Stack</h1>
+# <h1 align="center">Laporan Praktikum Modul Queue</h1>
 <p align="center">Afifah Faiqatuzzahra</p>
 
 ## Dasar Teori
