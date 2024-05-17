@@ -159,207 +159,143 @@ int main() {
 7. Menghapus elemen di indeks 3 menggunakan `remove`.
 8. Mencetak isi heap setelah penghapusan.
 
-Berikut adalah penjelasan implementasi antrian teller menggunakan array di C++:
-
-**1. Header dan Namespace:**
-
-```c++
-#include <iostream>
-
-using namespace std;
-```
-
-Baris pertama menyertakan pustaka `iostream` untuk operasi input/output. Baris kedua menggunakan namespace `std` untuk kenyamanan.
-
-**2. Konstanta dan Variabel:**
-
-```c++
-const int maksimalQueue = 5;
-int front = 0;
-int back = 0;
-
-string queueTeller[5];
-```
-
-* `maksimalQueue`: Menetapkan ukuran maksimum antrian (5 elemen dalam kasus ini).
-* `front`: Menunjuk ke elemen depan antrian (awalnya 0).
-* `back`: Menunjuk ke posisi di mana elemen berikutnya akan ditambahkan (awalnya 0).
-* `queueTeller`: Array string dengan ukuran `maksimalQueue` untuk menyimpan nama pelanggan.
-
-**3. Operasi Antrian:**
-
-* **isFull():** Memeriksa apakah antrian penuh dengan membandingkan `back` dengan `maksimalQueue`.
-* **isEmpty():** Memeriksa apakah antrian kosong dengan membandingkan `back` dengan 0.
-* **enqueueAntrian(string data):** Menambahkan pelanggan baru (`data`) ke antrian.
-    * Jika antrian penuh, menampilkan "Antrian Penuh".
-    * Jika tidak, menambahkan data ke `queueTeller[back]`, meningkatkan `back`, dan jika antrian kosong, juga meningkatkan `front`.
-* **dequeueAntrian():** Menghapus elemen depan dari antrian.
-    * Jika antrian kosong, menampilkan "Antrian kosong".
-    * Jika tidak, mengulangi elemen, menggesernya ke depan satu posisi untuk menghapus elemen depan. Kemudian mengurangi `back`.
-* **countQueue():** Mengembalikan jumlah elemen saat ini dalam antrian menggunakan nilai `back`.
-* **clearQueue():** Mengosongkan antrian dengan menyetel semua elemen dalam `queueTeller` ke string kosong dan menyetel ulang `back` dan `front` ke 0.
-    * Jika antrian sudah kosong, menampilkan "Antrian Kosong".
-* **viewQueue():** Mencetak isi antrian.
-    * Mengulangi array `queueTeller`.
-    * Jika elemen tidak kosong, menampilkan nomor elemen dan nama.
-    * Jika elemen kosong, menampilkan nomor elemen dan "(kosong)".
-
-**4. Fungsi Utama:**
-
-```c++
-int main() {
-  enqueueAntrian("Andi");
-  enqueueAntrian("Maya");
-  viewQueue();
-  cout << "Jumlah antrian =" << countQueue() << endl;
-  dequeueAntrian();
-  viewQueue();
-  cout << "Jumlah antrian =" << countQueue() << endl;
-  clearQueue();
-  viewQueue();
-  cout << "Jumlah antrian =" << countQueue() << endl;
-  return 0;
-}
-```
-
-Fungsi `main` menunjukkan cara menggunakan operasi antrian yang diimplementasikan:
-
-* Menambahkan "Andi" dan "Maya" (menambahkannya ke antrian).
-* Mencetak isi antrian menggunakan `viewQueue`.
-* Menampilkan jumlah elemen menggunakan `countQueue`.
-* Menghapus elemen (menghapus elemen depan).
-* Mencetak isi antrian lagi.
-* Menampilkan jumlah elemen lagi.
-* Mengosongkan antrian.
-* Mencetak isi antrian (seharusnya kosong).
-* Menampilkan jumlah elemen (seharusnya 0).
-
 ### Output
+![Screenshot (164)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/45defcf9-d608-4beb-bc0f-bc49dd97cfe0)
 
+## Kesimpulan
 
-## Informasi yang Dapat Diketahui dari Output Kode
-
-Berdasarkan output kode yang Anda berikan, berikut informasi yang dapat diketahui:
-
-### 1. Operasi pada Antrian Teller
-
-* **Penambahan Pelanggan:**
-    * "Andi" ditambahkan ke antrian teller.
-    * "Maya" ditambahkan ke antrian teller.
-
-* **Penampilan Antrian:**
-    * Setelah menambahkan "Andi" dan "Maya", antrian berisi:
-        * 1. Andi
-        * 2. Maya
-        * 3. (kosong)
-        * 4. (kosong)
-        * 5. (kosong)
-    * Jumlah antrian adalah 2.
-    * Setelah dequeueing, antrian berisi:
-        * 1. Maya
-        * 2. (kosong)
-        * 3. (kosong)
-        * 4. (kosong)
-        * 5. (kosong)
-    * Jumlah antrian adalah 1.
-    * Setelah clearQueue, antrian berisi:
-        * 1. (kosong)
-        * 2. (kosong)
-        * 3. (kosong)
-        * 4. (kosong)
-        * 5. (kosong)
-    * Jumlah antrian adalah 0.
-
-### 2. Status Antrian
-
-* **Antrian Penuh:**
-    * Kode tidak menunjukkan pesan "Antrian Penuh" karena antrian tidak pernah mencapai kapasitas maksimum (5 elemen).
-
-* **Antrian Kosong:**
-    * Pesan "Antrian kosong" muncul ketika dequeueing dari antrian kosong dan ketika clearQueue dijalankan pada antrian kosong.
-
-### 3. Jumlah Elemen
-
-* Jumlah elemen dalam antrian ditampilkan setelah setiap operasi enqueue, dequeue, dan clearQueue.
-
-### 4. Simulasi Antrian Teller
-
-* Kode ini mensimulasikan antrian teller sederhana dengan menambahkan, menghapus, dan menampilkan nama pelanggan.
+Output kode program memberikan wawasan berharga tentang implementasi dan operasi struktur data Heap Maksimum. Ini menunjukkan pengelolaan elemen secara efisien berdasarkan prioritas, menjadikannya alat serbaguna untuk berbagai aplikasi, seperti Antrian Prioritas dan algoritma seperti Heap Sort.
 
 ### Full code screenshot
-![Screenshot (149)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/88b719af-ffcb-4688-a037-d13c429d35e7)
+![Screenshot (164)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/45defcf9-d608-4beb-bc0f-bc49dd97cfe0)
 
 
 ## Unguided1
 ```C++
 #include <iostream>
-using namespace std;
+#include <algorithm>
 
-struct Node {
-    string data;
-    Node* next;
-};
+int H[50];
+int heapSize = -1;
 
-class Queue {
-private:
-    Node* front;
-    Node* rear;
-public:
-    Queue() {
-        front = nullptr;
-        rear = nullptr;
+int parent(int i) {
+    return (i - 1) / 2;
+}
+
+int leftChild(int i) {
+    return ((2 * i) + 1);
+}
+
+int rightChild(int i) {
+    return ((2 * i) + 2);
+}
+
+void shiftUp(int i) {
+    while (i > 0 && H[parent(i)] < H[i]) {
+        std::swap(H[parent(i)], H[i]);
+        i = parent(i);
     }
+}
 
-    bool isEmpty() {
-        return (front == nullptr);
+void shiftDown(int i) {
+    int maxIndex = i;
+    int l = leftChild(i);
+    if (l <= heapSize && H[l] > H[maxIndex]) {
+        maxIndex = l;
     }
+    int r = rightChild(i);
+    if (r <= heapSize && H[r] > H[maxIndex]) {
+        maxIndex = r;
+    }
+    if (i != maxIndex) {
+        std::swap(H[i], H[maxIndex]);
+        shiftDown(maxIndex);
+    }
+}
 
-    void enqueue(string data) {
-        Node* newNode = new Node();
-        newNode->data = data;
-        newNode->next = nullptr;
-        if (isEmpty()) {
-            front = newNode;
-            rear = newNode;
-        } else {
-            rear->next = newNode;
-            rear = newNode;
-        }
-    }
+void insert(int p) {
+    heapSize = heapSize + 1;
+    H[heapSize] = p;
+    shiftUp(heapSize);
+}
 
-    void dequeue() {
-        if (isEmpty()) {
-            cout << "Antrian kosong" << endl;
-        } else {
-            Node* temp = front;
-            front = front->next;
-            delete temp;
-        }
-    }
+int extractMax() {
+    int result = H[0];
+    H[0] = H[heapSize];
+    heapSize = heapSize - 1;
+    shiftDown(0);
+    return result;
+}
 
-    void displayQueue() {
-        if (isEmpty()) {
-            cout << "Antrian kosong" << endl;
-        } else {
-            Node* current = front;
-            cout << "Data antrian teller:" << endl;
-            while (current != nullptr) {
-                cout << current->data << endl;
-                current = current->next;
-            }
-        }
+void changePriority(int i, int p) {
+    int oldp = H[i];
+    H[i] = p;
+    if (p > oldp) {
+        shiftUp(i);
+    } else {
+        shiftDown(i);
     }
-};
+}
+
+int getMax() {
+    return H[0];
+}
+
+void remove(int i) {
+    H[i] = getMax() + 1;
+    shiftUp(i);
+    extractMax();
+}
 
 int main() {
-    Queue antrian;
+    int n, element;
+    std::cout << "Enter the number of elements to insert: ";
+    std::cin >> n;
 
-    antrian.enqueue("Andi");
-    antrian.enqueue("Maya");
-    antrian.displayQueue();
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Enter element " << i + 1 << ": ";
+        std::cin >> element;
+        insert(element);
+    }
 
-    antrian.dequeue();
-    antrian.displayQueue();
+    std::cout << "Priority Queue: ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
+
+    std::cout << "Node with maximum priority: " << extractMax() << "\n";
+
+    std::cout << "Priority queue after extracting maximum: ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
+
+    int index, newPriority;
+    std::cout << "Enter the index of the element to change priority: ";
+    std::cin >> index;
+    std::cout << "Enter the new priority value: ";
+    std::cin >> newPriority;
+
+    changePriority(index, newPriority);
+
+    std::cout << "Priority queue after priority change: ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
+
+    std::cout << "Enter the index of the element to remove: ";
+    std::cin >> index;
+
+    remove(index);
+
+    std::cout << "Priority queue after removing the element: ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
 
     return 0;
 }
