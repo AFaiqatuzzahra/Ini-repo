@@ -2,7 +2,11 @@
 <p align="center">Afifah Faiqatuzzahra</p>
 
 ## Dasar Teori
-
+Priority Queue (Antrian Prioritas) dalam C++ adalah struktur data yang menyimpan elemen berdasarkan prioritasnya. Elemen dengan prioritas tertinggi (nilai terbesar) selalu berada di posisi terdepan antrian. Hal ini memungkinkan akses cepat ke elemen dengan prioritas tinggi, yang membuatnya ideal untuk peng-aplikasi di mana waktu respons sangat penting[1], dalam priority queue operasi mendasar adalah enqueue dan dequeue, Keuntungan dalam implementasi ini memungkinkan beberapa proses untuk mengakses antrian prioritas secara bersamaan, berpotensi meningkatkan kinerja aplikasi yang menggunakannya, namun kekurangannya adalah implementasi ini lebih kompleks dibandingkan dengan implementasi antrian prioritas sekuensial. [2]
+Heap (tumpukan) adalah struktur data berupa pohon biner lengkap yang memenuhi sifat heap: untuk setiap node (simpul), nilai dari anak-anaknya harus kurang dari atau sama dengan nilai node itu sendiri. Heap biasanya digunakan untuk mengimplementasikan antrian prioritas, di mana elemen terkecil (atau terbesar) selalu berada di akar pohon.[3] Karakteristik Utama Heaps:
+Sifat Heap Max/Min: Dalam heap max, elemen di setiap sub-pohon selalu memiliki nilai lebih kecil atau sama dengan nilai akarnya. Sebaliknya, dalam heap min, elemen di setiap sub-pohon selalu memiliki nilai lebih besar atau sama dengan nilai akarnya.
+Sifat Struktur: Heaps selalu terstruktur sebagai pohon biner lengkap, di mana setiap node memiliki maksimal dua anak.
+Efisiensi Operasi: Heaps menawarkan operasi enqueue (memasukkan elemen) dan dequeue (menghapus elemen) yang efisien dengan kompleksitas waktu O(log n), di mana n adalah jumlah elemen dalam heap. [4]
 
 
 ## Guided
@@ -300,226 +304,75 @@ int main() {
     return 0;
 }
 ```
-## Implementasi Antrian Teller Menggunakan Linked List di C++
+## Implementasi 
 
-Kode yang diberikan sudah mengimplementasikan antrian menggunakan linked list untuk simulasi antrian teller. Berikut penjelasan rincinya:
+Kode ini mengimplementasikan struktur data **Heap Maksimum** dalam bahasa pemrograman C++. Heap Maksimum adalah struktur data khusus yang efisien untuk menyimpan elemen berdasarkan prioritasnya. Elemen dengan prioritas tertinggi (nilai terbesar) selalu berada di posisi teratas (indeks 0) heap. 
+**Header yang Digunakan:**
 
-**1. Struktur dan Definisi Kelas:**
+* `<iostream>`: Header ini menyediakan fungsi input dan output standar, seperti `std::cin` untuk membaca input dari pengguna dan `std::cout` untuk mencetak output ke konsol.
+* `<algorithm>`: Header ini menyediakan algoritma standar, seperti `std::swap` yang digunakan untuk menukar elemen array.
 
-* **Node (Simpul):**
-    * `data`: Variabel string untuk menyimpan nama pelanggan.
-    * `next`: Penunjuk ke simpul berikutnya di linked list.
-* **Queue (Antrian):**
-    * Anggota private:
-        * `front`: Penunjuk ke simpul depan antrian (awalnya `nullptr`).
-        * `rear`: Penunjuk ke simpul belakang antrian (awalnya `nullptr`).
-    * Fungsi anggota publik:
-        * **Konstruktor:** Meminisiasi `front` dan `rear` menjadi `nullptr`.
-        * **isEmpty():** Memeriksa apakah antrian kosong dengan memeriksa apakah `front` adalah `nullptr`.
-        * **enqueue(string data):** Menambahkan pelanggan baru (`data`) ke antrian.
-            * Membuat `Node` baru dan menetapkan data.
-            * Mengatur penunjuk `next` dari node baru ke `nullptr`.
-            * Jika antrian kosong, atur `front` dan `rear` ke node baru.
-            * Jika tidak, atur penunjuk `next` dari node `rear` saat ini ke node baru dan perbarui `rear` untuk menunjuk ke node baru.
-        * **dequeue():** Menghapus elemen depan dari antrian.
-            * Memeriksa apakah antrian kosong. Jika ya, tampilkan "Antrian kosong".
-            * Jika tidak, simpan node depan dalam variabel sementara `temp`.
-            * Perbarui `front` untuk menunjuk ke node kedua di antrian.
-            * Hapus node sementara menggunakan `delete temp`.
-        * **displayQueue():** Mencetak isi antrian.
-            * Memeriksa apakah antrian kosong. Jika ya, tampilkan "Antrian kosong".
-            * Jika tidak, iterasi melalui linked list dimulai dari `front`, cetak data dari setiap node hingga mencapai `nullptr`.
+**Array dan Variabel Global:**
 
-**2. Fungsi Utama:**
+* `H[50]`: Array yang digunakan untuk menyimpan elemen-elemen heap. Ukuran maksimum heap adalah 50 elemen.
+* `heapSize`: Variabel yang melacak jumlah elemen saat ini di dalam heap. Awalnya bernilai -1 karena heap masih kosong.
 
-```c++
-int main() {
-  Queue antrian; // Objek Queue bernama antrian
+**Fungsi-fungsi yang Digunakan:**
 
-  antrian.enqueue("Andi");
-  antrian.enqueue("Maya");
-  antrian.displayQueue();
+* `parent(int i)`: Fungsi ini menghitung indeks parent dari elemen di indeks `i`.
+* `leftChild(int i)`: Fungsi ini menghitung indeks anak kiri dari elemen di indeks `i`.
+* `rightChild(int i)`: Fungsi ini menghitung indeks anak kanan dari elemen di indeks `i`.
+* `shiftUp(int i)`: Fungsi ini melakukan perbaikan ke atas (shiftUp) pada elemen di indeks `i`. Digunakan untuk menjaga struktur heap maksimum, yaitu elemen parent harus lebih besar dari atau sama dengan anak-anaknya.
+* `shiftDown(int i)`: Fungsi ini melakukan perbaikan ke bawah (shiftDown) pada elemen di indeks `i`. Digunakan untuk menjaga struktur heap maksimum setelah melakukan operasi seperti `extractMax` atau `changePriority`.
+* `insert(int p)`: Fungsi ini memasukkan elemen baru `p` ke dalam heap. Elemen baru ditempatkan di posisi terakhir heap, kemudian dilakukan perbaikan ke atas untuk menjaga struktur heap.
+* `extractMax()`: Fungsi ini mengekstrak elemen dengan prioritas tertinggi (nilai terbesar) dari heap. Elemen yang diekstrak dikembalikan oleh fungsi. Setelah ekstraksi, dilakukan perbaikan ke bawah untuk menjaga struktur heap.
+* `changePriority(int i, int p)`: Fungsi ini mengubah prioritas elemen di indeks `i` menjadi nilai `p`. Fungsi ini kemudian melakukan perbaikan ke atas atau ke bawah tergantung apakah prioritas baru lebih besar atau lebih kecil dari prioritas sebelumnya.
+* `getMax()`: Fungsi ini mengembalikan elemen dengan prioritas tertinggi (nilai terbesar) tanpa mengeluarkannya dari heap.
+* `remove(int i)`: Fungsi ini menghapus elemen di indeks `i` dari heap. Elemen yang akan dihapus diganti terlebih dahulu dengan elemen yang memiliki prioritas tertinggi, kemudian dilakukan perbaikan ke bawah untuk menjaga struktur heap.
 
-  antrian.dequeue();
-  antrian.displayQueue();
+**Fungsi Utama (main):**
 
-  return 0;
-}
-```
+1. **Meminta Input dari Pengguna:**
+   - Program meminta pengguna untuk memasukkan jumlah elemen yang ingin dimasukkan ke dalam heap menggunakan `std::cin`.
 
-Fungsi `main` mendemonstrasikan cara menggunakan operasi antrian yang diimplementasikan:
+2. **Memasukkan Elemen ke dalam Heap:**
+   - Kode menggunakan loop `for` untuk membaca elemen dari pengguna (menggunakan `std::cin`) dan memasukkannya ke dalam heap menggunakan fungsi `insert`.
 
-* Membuat objek `Queue` bernama `antrian`.
-* Menambahkan "Andi" dan "Maya" (menambahkannya ke antrian).
-* Mencetak isi antrian menggunakan `displayQueue`.
-* Menghapus elemen (menghapus elemen depan).
-* Mencetak isi antrian lagi.
+3. **Mencetak Heap Saat Ini:**
+   - Program mencetak isi heap saat ini menggunakan loop `for` dan `std::cout`.
 
+4. **Mengekstrak Elemen dengan Prioritas Tertinggi:**
+   - Fungsi `extractMax` digunakan untuk mengekstrak elemen dengan prioritas tertinggi dari heap. Elemen yang diekstrak kemudian dicetak menggunakan `std::cout`.
+
+5. **Mencetak Heap setelah Ekstraksi:**
+   - Program mencetak isi heap setelah ekstraksi menggunakan loop `for` dan `std::cout`.
+
+6. **Meminta Input untuk Mengubah Prioritas:**
+   - Program meminta pengguna untuk memasukkan indeks elemen yang ingin diubah prioritasnya dan nilai prioritas baru menggunakan `std::cin`.
+
+7. **Mengubah Prioritas Elemen:**
+   - Fungsi `changePriority` digunakan untuk mengubah prioritas elemen di indeks yang ditentukan menjadi nilai prioritas baru.
+
+8. **Mencetak Heap setelah Perubahan Prioritas:**
+   - Program mencetak isi heap setelah perubahan prioritas menggunakan loop `for` dan `std::cout`.
+
+9. **Meminta Input untuk Menghapus Elemen:**
+   - Program meminta pengguna untuk memasukkan indeks elemen yang ingin dihapus dari heap menggunakan `std::cin`.
+
+10. **Menghapus Elemen dari Heap:**
+   - Fungsi `remove` digunakan untuk menghapus elemen di indeks yang ditentukan dari heap.
+
+11. **Mencetak Heap setelah Penghapusan:**
+   - Program mencetak isi heap setelah penghapusan menggunakan loop `for`
 ### Output
-![image](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/dcee88df-b09b-442e-84e6-3c3fee22a0fd)
+![Screenshot (165)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/fcd31570-adfe-4aa3-9f88-0f88827c70d7)
 
-daei output tersebut dapat diketahui bahwa data pada antrian tersebut adalah Andi dan Maya.
+daei output tersebut dapat diketahui bahwa user memasukkan 5 elemen kemudian elemen 1 dengan nilai 23, kemudian 1,43,3,6. setelah di-enter code mengeluarkan maximum priority yakni 43, sehingga dihasilkan 23,6,3,1. kemudian code memberikan pertanyaan endex yang akan diganti di index keberapa, dan user memasukkan index ke-2 dengan nilai 13, maka dihasilkan 23,6,13,1 dan terakhir kode menanyakan index mana yang akan dihapus dan user memasukkan index ke 3 sehingga hasil akhihr menjadi 23,6,13.
 
 ### Full Screenshot
-![Screenshot (155)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/24ba6099-62b9-49c3-82de-b9c6df9adeb8)
+![Screenshot (165)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/fcd31570-adfe-4aa3-9f88-0f88827c70d7)
 
-
-## Unguided2
-```C++
-#include <iostream>
-using namespace std;
-
-struct Mahasiswa {
-    string nama;
-    string nim;
-    Mahasiswa* next;
-};
-
-class AntrianMahasiswa {
-private:
-    Mahasiswa* front;
-    Mahasiswa* rear;
-public:
-    AntrianMahasiswa() {
-        front = nullptr;
-        rear = nullptr;
-    }
-
-    bool isEmpty() {
-        return (front == nullptr);
-    }
-
-    void enqueue(string nama, string nim) {
-        Mahasiswa* newNode = new Mahasiswa();
-        newNode->nama = nama;
-        newNode->nim = nim;
-        newNode->next = nullptr;
-        if (isEmpty()) {
-            front = newNode;
-            rear = newNode;
-        } else {
-            rear->next = newNode;
-            rear = newNode;
-        }
-    }
-
-    void dequeue() {
-        if (isEmpty()) {
-            cout << "Antrian kosong" << endl;
-        } else {
-            Mahasiswa* temp = front;
-            front = front->next;
-            delete temp;
-        }
-    }
-
-    void displayAntrian() {
-        if (isEmpty()) {
-            cout << "Antrian kosong" << endl;
-        } else {
-            Mahasiswa* current = front;
-            cout << "Data dalam antrian mahasiswa:" << endl;
-            while (current != nullptr) {
-                cout << "Nama: " << current->nama << ", NIM: " << current->nim << endl;
-                current = current->next;
-            }
-        }
-    }
-};
-
-int main() {
-    AntrianMahasiswa antrian;
-
-    // Menambahkan beberapa mahasiswa ke dalam antrian
-    antrian.enqueue("Andi", "123456789");
-    antrian.enqueue("Maya", "987654321");
-
-    // Menampilkan isi antrian
-    antrian.displayAntrian();
-
-    // Menghapus mahasiswa pertama dari antrian
-    antrian.dequeue();
-
-    // Menampilkan isi antrian setelah penghapusan
-    antrian.displayAntrian();
-
-    return 0;
-}
-```
-## Implementasi Antrian Mahasiswa Menggunakan Linked List di C++
-
-Kode yang diberikan berhasil mengimplementasikan antrian untuk mengelola antrian mahasiswa menggunakan struktur data linked list. Berikut penjelasan rinciannya:
-
-**1. Struktur dan Definisi Kelas:**
-
-* **Mahasiswa (Student):**
-    * `nama`: Variabel string untuk menyimpan nama mahasiswa.
-    * `nim`: Variabel string untuk menyimpan NIM (Nomor Induk Mahasiswa).
-    * `next`: Penunjuk ke node berikutnya di linked list.
-* **AntrianMahasiswa (StudentQueue):**
-    * Anggota private:
-        * `front`: Penunjuk ke node depan antrian (awalnya `nullptr`).
-        * `rear`: Penunjuk ke node belakang antrian (awalnya `nullptr`).
-    * Fungsi anggota publik:
-        * **Konstruktor:** Meminisiasi `front` dan `rear` menjadi `nullptr`.
-        * **isEmpty():** Memeriksa apakah antrian kosong dengan memeriksa apakah `front` adalah `nullptr`.
-        * **enqueue(string nama, string nim):** Menambahkan mahasiswa baru (`nama` dan `nim`) ke antrian.
-            * Membuat node `Mahasiswa` baru dan menetapkan data.
-            * Mengatur penunjuk `next` dari node baru ke `nullptr`.
-            * Jika antrian kosong, atur `front` dan `rear` ke node baru.
-            * Jika tidak, atur penunjuk `next` dari node `rear` saat ini ke node baru dan perbarui `rear` untuk menunjuk ke node baru.
-        * **dequeue():** Menghapus elemen depan (mahasiswa pertama) dari antrian.
-            * Memeriksa apakah antrian kosong. Jika ya, tampilkan "Antrian kosong".
-            * Jika tidak, simpan node depan dalam variabel sementara `temp`.
-            * Perbarui `front` untuk menunjuk ke node kedua di antrian.
-            * Hapus node sementara menggunakan `delete temp`.
-        * **displayAntrian():** Mencetak isi antrian.
-            * Memeriksa apakah antrian kosong. Jika ya, tampilkan "Antrian kosong".
-            * Jika tidak, iterasi melalui linked list dimulai dari `front`, mencetak data dari setiap node (nama dan NIM) hingga mencapai `nullptr`.
-
-**2. Fungsi Utama:**
-
-```c++
-int main() {
-  AntrianMahasiswa antrian; // Objek AntrianMahasiswa bernama antrian
-
-  // Menambahkan beberapa mahasiswa ke dalam antrian (menambahkan mahasiswa)
-  antrian.enqueue("Andi", "123456789");
-  antrian.enqueue("Maya", "987654321");
-
-  // Menampilkan isi antrian
-  antrian.displayAntrian();
-
-  // Menghapus mahasiswa pertama dari antrian (menghapus mahasiswa pertama)
-  antrian.dequeue();
-
-  // Menampilkan isi antrian setelah penghapusan
-  antrian.displayAntrian();
-
-  return 0;
-}
-```
-
-Fungsi `main` mendemonstrasikan cara menggunakan operasi antrian yang diimplementasikan:
-
-* Membuat objek `AntrianMahasiswa` bernama `antrian`.
-* Menambahkan (enqueue) dua mahasiswa ke antrian: "Andi" dengan NIM "123456789" dan "Maya" dengan NIM "987654321".
-* Memanggil `displayAntrian` untuk mencetak isi antrian.
-* Menghapus (dequeue) mahasiswa pertama dari antrian.
-* Memanggil `displayAntrian` lagi untuk mencetak isi antrian setelah dequeue.
-
-**Ringkasan:**
-
-Kode ini efektif mengimplementasikan antrian mahasiswa menggunakan linked list dan menyediakan operasi dasar enqueue, dequeue, dan display untuk mengelola antrian. Ini dapat digunakan untuk simulasi antrian mahasiswa yang menunggu layanan atau sumber daya.
-### Output
-![Screenshot (156)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/b5c9cfbf-f103-4e80-b767-480be784a448)
-
-Dari output diatas dapat disimpulkan bahwa kode ini efektif mengimplementasikan antrian mahasiswa menggunakan linked list dan menyediakan operasi dasar enqueue, dequeue, dan display untuk mengelola antrian. Ini dapat digunakan untuk simulasi antrian mahasiswa yang menunggu layanan atau sumber daya.
-### Full Screenshot
-![Screenshot (156)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/b5c9cfbf-f103-4e80-b767-480be784a448)
-
-
-
-[1] Goponenko, A., & Carroll, S. (2019). A C++ implementation of a lock-free priority queue based on Multi-Dimensional Linked List. Link: https://www. researchgate. net/publication/337020321_A_C_Implementation_of_a_Lock-Free _Priority_Queue_Based_on_Multi-Dimensional_Linked_List.
-[2] GeeksforGeeks, “Queue Data Structure - GeeksforGeeks,” GeeksforGeeks, 2015. https://www.geeksforgeeks.org/queue-data-structure/
-[3] K. Jagannathan and E. Modiano, "The Impact of Queue Length Information on Buffer Overflow in Parallel Queues," in IEEE Transactions on Information Theory, vol. 59, no. 10, pp. 6393-6404, Oct. 2013, doi: 10.1109/TIT.2013.2268926. keywords: {Queueing analysis;Servers;Indexes;Scheduling;Trajectory;Processor scheduling;Topology;Buffer overflow probability;large deviations;queue length-based scheduling},
+[1]. GeeksforGeeks, “Priority queue in C++,” GeeksforGeeks. Dec. 12, 2019. [Online]. Available: https://www.geeksforgeeks.org/videos/priority-queue-in-c/.
+[2] D. W. Jjones, "Concurrent operations on priority queues," Commun. ACM, vol. 32, no. Jan. 1989, pp. 132-137, 1989. DOI https://doi.org/10.1145/63238.63249.
+[3]. “Heap Data Structure,” GeeksforGeeks. https://www.geeksforgeeks.org/heap-data-structure/.
+‌[4]. E. Q. a. Z. P. a. H. J. Vintila, "MESH: A Memory-Efficient Safe HEap for C/C++," Association for Computing Macinery, p. 10, 2021. https://doi.org/10.1145/3465481.3465760.
