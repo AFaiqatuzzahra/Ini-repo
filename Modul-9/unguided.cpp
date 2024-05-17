@@ -1,144 +1,127 @@
 #include <iostream>
-#include <vector> // Use vector for dynamic heap representation
 #include <algorithm>
 
-using namespace std;
+int H[50];
+int heapSize = -1;
 
 int parent(int i) {
-  return (i - 1) / 2;
+    return (i - 1) / 2;
 }
 
 int leftChild(int i) {
-  return ((2 * i) + 1);
+    return ((2 * i) + 1);
 }
 
 int rightChild(int i) {
-  return ((2 * i) + 2);
+    return ((2 * i) + 2);
 }
 
-void shiftUp(vector<int>& H, int i) {
-  while (i > 0 && H[parent(i)] < H[i]) {
-    swap(H[parent(i)], H[i]);
-    i = parent(i);
-  }
+void shiftUp(int i) {
+    while (i > 0 && H[parent(i)] < H[i]) {
+        std::swap(H[parent(i)], H[i]);
+        i = parent(i);
+    }
 }
 
-void shiftDown(vector<int>& H, int i) {
-  int maxIndex = i;
-  int l = leftChild(i);
-  if (l <= H.size() - 1 && H[l] > H[maxIndex]) {
-    maxIndex = l;
-  }
-  int r = rightChild(i);
-  if (r <= H.size() - 1 && H[r] > H[maxIndex]) {
-    maxIndex = r;
-  }
-  if (i != maxIndex) {
-    swap(H[i], H[maxIndex]);
-    shiftDown(H, maxIndex);
-  }
+void shiftDown(int i) {
+    int maxIndex = i;
+    int l = leftChild(i);
+    if (l <= heapSize && H[l] > H[maxIndex]) {
+        maxIndex = l;
+    }
+    int r = rightChild(i);
+    if (r <= heapSize && H[r] > H[maxIndex]) {
+        maxIndex = r;
+    }
+    if (i != maxIndex) {
+        std::swap(H[i], H[maxIndex]);
+        shiftDown(maxIndex);
+    }
 }
 
-void insert(vector<int>& H, int p) {
-  H.push_back(p);
-  shiftUp(H, H.size() - 1);
+void insert(int p) {
+    heapSize = heapSize + 1;
+    H[heapSize] = p;
+    shiftUp(heapSize);
 }
 
-int extractMax(vector<int>& H) {
-  if (H.empty()) {
-    cout << "Heap is empty!" << endl;
-    return -1; // Or throw an exception
-  }
-  int result = H[0];
-  H[0] = H.back();
-  H.pop_back();
-  shiftDown(H, 0);
-  return result;
+int extractMax() {
+    int result = H[0];
+    H[0] = H[heapSize];
+    heapSize = heapSize - 1;
+    shiftDown(0);
+    return result;
 }
 
-void changePriority(vector<int>& H, int i, int p) {
-  if (i >= H.size()) {
-    cout << "Invalid index!" << endl;
-    return;
-  }
-  int oldp = H[i];
-  H[i] = p;
-  if (p > oldp) {
-    shiftUp(H, i);
-  } else {
-    shiftDown(H, i);
-  }
+void changePriority(int i, int p) {
+    int oldp = H[i];
+    H[i] = p;
+    if (p > oldp) {
+        shiftUp(i);
+    } else {
+        shiftDown(i);
+    }
 }
 
-int getMax(const vector<int>& H) {
-  if (H.empty()) {
-    cout << "Heap is empty!" << endl;
-    return -1; // Or throw an exception
-  }
-  return H[0];
+int getMax() {
+    return H[0];
 }
 
-void remove(vector<int>& H, int i) {
-  if (i >= H.size()) {
-    cout << "Invalid index!" << endl;
-    return;
-  }
-  changePriority(H, i, getMax(H) + 1); // Set priority very high
-  extractMax(H);
+void remove(int i) {
+    H[i] = getMax() + 1;
+    shiftUp(i);
+    extractMax();
 }
 
 int main() {
-  vector<int> H; // Dynamic heap representation
+    int n, element;
+    std::cout << "Enter the number of elements to insert: ";
+    std::cin >> n;
 
-  int numElements;
-  cout << "Enter the number of elements in the heap: ";
-  cin >> numElements;
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Enter element " << i + 1 << ": ";
+        std::cin >> element;
+        insert(element);
+    }
 
-  cout << "Enter the elements (space-separated): ";
-  for (int i = 0; i < numElements; ++i) {
-    int value;
-    cin >> value;
-    insert(H, value);
-  }
+    std::cout << "Priority Queue: ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
 
-  cout << "Priority Queue : ";
-  for (int i = 0; i < H.size(); ++i) {
-    cout << H[i] << " ";
-  }
-  cout << "\n";
+    std::cout << "Node with maximum priority: " << extractMax() << "\n";
 
-  cout << "Node with maximum priority :" << extractMax(H) << "\n";
+    std::cout << "Priority queue after extracting maximum: ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
 
-  cout << "Priority queue after extracting maximum :";
-  for (int i = 0; i < H.size(); ++i) {
-    cout << H[i] << " ";
-  }
-  cout << "\n";
+    int index, newPriority;
+    std::cout << "Enter the index of the element to change priority: ";
+    std::cin >> index;
+    std::cout << "Enter the new priority value: ";
+    std::cin >> newPriority;
 
-  int changeIndex, newPriority;
-  cout << "Enter index to change priority: ";
-  cin >> changeIndex;
-  cout << "Enter new priority: ";
-  cin >> newPriority;
+    changePriority(index, newPriority);
 
-  changePriority(H, changeIndex, newPriority);
-  cout << "Priority queue after priority change :";
-    for (int i = 0; i < H.size(); ++i) {
-    cout << H[i] << " ";
-  }
-  cout << "\n";
+    std::cout << "Priority queue after priority change: ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
 
-  int removeIndex;
-  cout << "Enter index to remove element: ";
-  cin >> removeIndex;
+    std::cout << "Enter the index of the element to remove: ";
+    std::cin >> index;
 
-  remove(H, removeIndex);
-  cout << "Priority queue after removing the element :";
-  for (int i = 0; i < H.size(); ++i) {
-    cout << H[i] << " ";
-  }
-  cout << "\n";
+    remove(index);
 
-  return 0;
+    std::cout << "Priority queue after removing the element: ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
+
+    return 0;
 }
-
