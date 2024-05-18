@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Fungsi untuk melakukan insertion sort secara descending
 void insertion_sort(char arr[], int length) {
     int i, j;
     char tmp;
@@ -16,7 +15,6 @@ void insertion_sort(char arr[], int length) {
     }
 }
 
-// Fungsi untuk mencetak isi array
 void print_array(char a[], int length) {
     for(int i = 0; i < length; i++) {
         cout << a[i] << "\t";
