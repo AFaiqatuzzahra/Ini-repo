@@ -1318,3 +1318,18 @@ Kesimpulan pada materi kali ini adalah saya mengetahui bahwa Linked list merupak
 [1] GeeksforGeeks, “Linked List Implementation in C,” GeeksforGeeks, Jan. 17, 2023. https://www.geeksforgeeks.org/linked-list-implementation-in-c-sharp/
 
 [2] H. Sismoro, K. Iskandar, Struktur Data & Pemrograman Dengan Pascal. Indonesia: Penerbit Andi, 2004.
+
+
+
+
+guided1
+
+guided2
+
+unguided1
+![Screenshot (177)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/f4e7e43d-60d0-4533-a2a3-39d7f3f8e20e)
+unguided2
+![Screenshot (178)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/18671538-4a34-4312-9c4b-041b7f62c275)
+unguided3
+![Screenshot (179)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/65bb72c8-ebcf-4ab1-aa00-6597ad776521)
+
