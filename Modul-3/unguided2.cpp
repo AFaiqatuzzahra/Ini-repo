@@ -4,13 +4,12 @@
 
 using namespace std;
 
-//menerima sebuah vector yang berisi string yang akan diurutkan
 void bubbleSort(vector<string> &names) {
     int n = names.size();
-    for (int i = 0; i < n-1; i++) { //melintasi setiap elemen faktor
-        for (int j = 0; j < n-i-1; j++) { //membandingkan dan menukar apabila tidak ssesuai
+    for (int i = 0; i < n-1; i++) { 
+        for (int j = 0; j < n-i-1; j++) { 
             if (names[j] > names[j+1]) {
-                swap(names[j], names[j+1]); //menukar elemen
+                swap(names[j], names[j+1]); 
             }
         }
     }
@@ -27,7 +26,7 @@ int main() {
     }
     cout << endl;
 
-    bubbleSort(names); //mengurutkan nama-nama dalam vektor
+    bubbleSort(names); 
 
     cout << "\nSetelah diurutkan:" << endl;
     for (const auto &name : names) {
@@ -35,5 +34,5 @@ int main() {
     }
     cout << endl; 
 
-    return 0; //apabila tidak ada kesalahan program
+    return 0; 
 }
