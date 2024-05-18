@@ -3,7 +3,7 @@
 using namespace std;
 
 void bubble_sort(double arr [], int length){
-    bool not_sorted = true; //untuk menyatakan berhentinya selesai terurut atau belum
+    bool not_sorted = true;
     int j=0;
     double tmp;
 
@@ -16,12 +16,12 @@ void bubble_sort(double arr [], int length){
                 arr[i] = arr [i + 1];
                 arr[i + 1] = tmp; //
                 not_sorted = true;
-            }//end of if
-        }//end of for loop
-    }//end of while loop
-}//end of bubble_sort
+            }
+        }
+    }
+}
 
-void print_array(double a[], int length) { //function tanpa return
+void print_array(double a[], int length) { 
     for(int i=0; i<length; i++) {
         cout << a[i] << "\t";
     }
