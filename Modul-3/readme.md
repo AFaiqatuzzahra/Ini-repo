@@ -1323,9 +1323,9 @@ Kesimpulan pada materi kali ini adalah saya mengetahui bahwa Linked list merupak
 
 
 guided1
-
+![Screenshot (180)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/7717d041-efb5-4aed-af9b-3cfdd0a84cf0)
 guided2
-
+![Screenshot (181)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/09855e77-2a09-46e9-a248-56e095ffb9e9)
 unguided1
 ![Screenshot (177)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/f4e7e43d-60d0-4533-a2a3-39d7f3f8e20e)
 unguided2
