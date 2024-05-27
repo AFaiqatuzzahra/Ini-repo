@@ -2,7 +2,18 @@
 <p align="center">Afifah Faiqatuzzahra</p>
 
 ## Dasar Teori
-
+Metode rekursif adalah metode yang secara langsung atau tidak langsung memanggil dirinya sendiri[2]. Cara Kerja Rekursif:
+Kasus Dasar (Base Case): Ini adalah kondisi yang menentukan kapan rekursi harus berhenti. Tanpa kasus dasar, rekursi akan terus berjalan tanpa henti dan menyebabkan masalah seperti stack overflow.
+Langkah Rekursif (Recursive Step): Ini adalah bagian di mana fungsi memanggil dirinya sendiri dengan input yang dimodifikasi. Biasanya, input ini merupakan versi yang lebih kecil atau lebih sederhana dari input awal.
+Kelebihan Rekursif:
+Kode Lebih Ringkas dan Elegan: Solusi rekursif seringkali lebih ringkas dan mudah dibaca daripada solusi iteratif (menggunakan perulangan). Hal ini karena rekursi dapat mengekspresikan pola berulang secara alami.
+Cocok untuk Masalah yang Memiliki Struktur Rekursif: Beberapa masalah secara inheren memiliki struktur rekursif, seperti penelusuran struktur pohon, perhitungan faktorial, deret Fibonacci, dan algoritma pengurutan tertentu (misalnya, quicksort dan mergesort). Rekursi adalah cara alami untuk memecahkan masalah ini.
+Mudah Dipahami (untuk beberapa kasus): Dalam beberapa kasus, solusi rekursif dapat lebih mudah dipahami karena mencerminkan definisi masalah itu sendiri. Misalnya, definisi faktorial secara rekursif (n! = n * (n-1)!) langsung diterjemahkan ke dalam kode rekursif.
+Kekurangan Rekursif:
+Efisiensi: Rekursi seringkali kurang efisien daripada iterasi karena setiap pemanggilan fungsi membutuhkan alokasi memori tambahan pada stack panggilan. Ini dapat menyebabkan overhead yang signifikan, terutama untuk rekursi yang dalam.
+Potensi Stack Overflow: Jika rekursi terlalu dalam (terlalu banyak pemanggilan fungsi bertumpuk), stack panggilan bisa penuh, menyebabkan program berhenti dengan error stack overflow.
+Sulit Di-debug: Rekursi bisa lebih sulit untuk di-debug daripada iterasi karena alur eksekusi program melompat-lompat antara pemanggilan fungsi.
+Tidak Selalu Lebih Mudah Dipahami: Meskipun rekursi bisa elegan untuk beberapa kasus, tidak selalu mudah dipahami, terutama untuk rekursi yang kompleks. Terkadang, solusi iteratif bisa lebih jelas dan mudah diikuti.[1]
 
 ## Guided1
 
@@ -214,12 +225,77 @@ Kode C++ yang diberikan berfungsi dengan baik untuk menghitung dan menampilkan f
 ### Full code screenshot
 ![Screenshot (212)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/e9a56d81-301d-4a5c-88d0-5e44b25bc1f8)
 
+## Unguided2
+```c++
+#include <iostream>
 
+using namespace std;
 
+int factorialHelper(int n, int result) {
+    if (n == 0) {
+        return result; 
+    } else {
+        return factorialHelper(n - 1, n * result); 
+    }
+}
 
+int factorial(int n) {
+    return factorialHelper(n, 1); 
+}
 
+int main() {
+    int num;
 
-[1]. GeeksforGeeks, “Priority queue in C++,” GeeksforGeeks. Dec. 12, 2019. [Online]. Available: https://www.geeksforgeeks.org/videos/priority-queue-in-c/.
-[2] D. W. Jjones, "Concurrent operations on priority queues," Commun. ACM, vol. 32, no. Jan. 1989, pp. 132-137, 1989. DOI https://doi.org/10.1145/63238.63249.
-[3]. “Heap Data Structure,” GeeksforGeeks. https://www.geeksforgeeks.org/heap-data-structure/.
-‌[4]. E. Q. a. Z. P. a. H. J. Vintila, "MESH: A Memory-Efficient Safe HEap for C/C++," Association for Computing Macinery, p. 10, 2021. https://doi.org/10.1145/3465481.3465760.
+    cout << "Masukkan bilangan bulat positif: ";
+    cin >> num;
+
+        if (num < 0) {
+        cout << "Input tidak valid. Masukkan bilangan bulat positif." << endl;
+    } else {
+        int result = factorial(num);
+        cout << "Faktorial dari " << num << " adalah: " << result << endl;
+    }
+
+    return 0;
+}
+```
+### Implementasi
+
+1. **Fungsi `factorialHelper`:**
+   - Menerima dua parameter: `n` (bilangan yang akan dicari faktorialnya) dan `result` (hasil perkalian sementara).
+   - Jika `n` adalah 0, kembalikan `result` (nilai faktorial dari 0 adalah 1).
+   - Jika `n` bukan 0, panggil dirinya sendiri secara rekursif dengan `n-1` dan `n * result`. 
+
+2. **Fungsi `factorial`:**
+   - Menerima satu parameter: `n` (bilangan yang akan dicari faktorialnya).
+   - Memeriksa apakah `n` negatif. Jika iya, cetak pesan kesalahan dan kembalikan -1.
+   - Jika `n` tidak negatif, panggil `factorialHelper(n, 1)` untuk memulai proses rekursi.
+
+3. **Fungsi `main`:**
+   - Menerima input bilangan bulat dari pengguna.
+   - Memanggil fungsi `factorial` untuk menghitung faktorial.
+   - Mencetak hasil faktorial jika perhitungan berhasil.
+
+- Fungsi `factorialHelper` ditambahkan untuk mempermudah pengelolaan hasil perkalian sementara selama rekursi.
+- Penanganan kesalahan ditambahkan untuk memastikan input berupa bilangan bulat positif.
+
+### Output
+![Screenshot (213)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/6af4c51d-949b-487a-9f7c-fc8d7371014f)
+Kode ini berfungsi untuk menghitung faktorial dari sebuah bilangan bulat positif yang dimasukkan oleh pengguna. Output yang dihasilkan akan menampilkan faktorial dari bilangan tersebut, atau pesan kesalahan jika input tidak valid (bukan bilangan bulat positif).
+kesimpulan dari output kode:
+
+*   **Fungsi Rekursif:** Kode ini menggunakan fungsi rekursif (`factorialHelper`) untuk menghitung faktorial. Rekursi adalah konsep di mana sebuah fungsi memanggil dirinya sendiri.
+*   **Kasus Dasar:** Rekursi memiliki kasus dasar (`n == 0`) yang menghentikan pemanggilan rekursif lebih lanjut. Dalam kasus ini, faktorial dari 0 adalah 1.
+*   **Langkah Rekursif:** Setiap pemanggilan rekursif mengurangi nilai `n` sebanyak 1 dan mengalikan hasil sementara (`result`) dengan `n`.
+*   **Validasi Input:** Kode memeriksa apakah input pengguna adalah bilangan bulat positif. Jika tidak, akan ditampilkan pesan kesalahan.
+*   **Output:** Jika input valid, kode akan menampilkan faktorial dari bilangan yang dimasukkan.
+
+Secara keseluruhan, kode ini memberikan contoh implementasi perhitungan faktorial menggunakan rekursi dalam bahasa C++ dan menunjukkan cara menangani input yang tidak valid.
+
+### Full code screenshot
+![Screenshot (213)](https://github.com/AFaiqatuzzahra/Praktikum-Algoritma-Pemrograman-dan-Struktur-Data/assets/152428747/6af4c51d-949b-487a-9f7c-fc8d7371014f)
+
+## Daftar Pustaka
+
+[1]. “C++ Recursion (With example).” https://www.programiz.com/cpp-programming/recursion.
+[2]. Hanief, S., Jepriana, I. W., & Kom, S. (2020). Konsep Algoritme dan Aplikasinya dalam Bahasa Pemrograman C++. Penerbit Andi.
