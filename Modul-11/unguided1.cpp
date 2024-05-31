@@ -14,7 +14,7 @@ private:
     unordered_map<int, list<Mahasiswa>> table;
 
     int hashFunction(int nim) {
-        return nim % 10; // Contoh fungsi hash sederhana
+        return nim % 10; 
     }
 
 public:
