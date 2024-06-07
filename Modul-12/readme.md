@@ -32,6 +32,7 @@ Graf yang dapat memiliki beberapa sisi antara sepasang simpul.
 Graf yang dibentuk dari subset simpul dan sisi dari graf lain.
 14. Graf Planar (Planar Graph):
 Graf yang dapat digambar di bidang tanpa ada sisi yang saling memotong.[2]
+
 Tree adalah bentuk khusus dari graph yang tidak memiliki cycle dan memiliki struktur hierarkis. Tree memiliki satu root node dan setiap node (kecuali root) memiliki satu parent node dan nol atau lebih child node. Tree yang paling sederhana adalah binary tree, di mana setiap node memiliki paling banyak dua child.[4]
 Beberapa jenis tree yang umum:
 1. Binary Tree: Setiap node memiliki paling banyak dua anak.
