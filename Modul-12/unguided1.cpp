@@ -8,23 +8,22 @@ void hitungJarakAntarKota() {
     int jumlahKota;
     cout << "Masukkan jumlah kota: ";
     cin >> jumlahKota;
-    cin.ignore(); // Untuk mengabaikan karakter newline setelah input jumlahKota
+    cin.ignore(); 
+    
+    vector<string> namaKota(jumlahKota); 
+    vector<vector<int>> jarak(jumlahKota, vector<int>(jumlahKota)); 
 
-    vector<string> namaKota(jumlahKota); // Vector untuk nama kota
-    vector<vector<int>> jarak(jumlahKota, vector<int>(jumlahKota)); // Matriks jarak
-
-    // Input nama kota
     for (int i = 0; i < jumlahKota; ++i) {
         cout << "Masukkan nama kota ke-" << i + 1 << ": ";
-        getline(cin, namaKota[i]); // Menggunakan getline untuk membaca nama kota yang bisa mengandung spasi
+        getline(cin, namaKota[i]); 
     }
 
-    // Input jarak antar kota
+  
     cout << "\nMasukkan jarak antar kota (0 jika tidak ada jalur langsung):\n";
     for (int i = 0; i < jumlahKota; ++i) {
         for (int j = 0; j < jumlahKota; ++j) {
             if (i == j) {
-                jarak[i][j] = 0; // Jarak ke kota sendiri adalah 0
+                jarak[i][j] = 0; 
             } else {
                 cout << namaKota[i] << " --> " << namaKota[j] << " = ";
                 cin >> jarak[i][j];
@@ -32,7 +31,6 @@ void hitungJarakAntarKota() {
         }
     }
 
-    // Tampilkan matriks jarak
     cout << "\nMatriks Jarak:\n    ";
     for (const string& nama : namaKota) {
         cout << nama << "\t";
@@ -46,15 +44,13 @@ void hitungJarakAntarKota() {
         cout << endl;
     }
 
-    // Contoh penggunaan: Mencari jarak dari kota awal ke kota tujuan
-    string kotaAwal, kotaTujuan;
+     string kotaAwal, kotaTujuan;
     cout << "\nMasukkan kota awal: ";
-    cin.ignore(); // Untuk mengabaikan karakter newline setelah input jarak
+    cin.ignore();
     getline(cin, kotaAwal);
     cout << "Masukkan kota tujuan: ";
     getline(cin, kotaTujuan);
 
-    // Cari indeks kota
     int indeksAwal = -1, indeksTujuan = -1;
     for (int i = 0; i < jumlahKota; ++i) {
         if (namaKota[i] == kotaAwal) {
@@ -81,11 +77,10 @@ int main() {
     int nim;
 
     cout << "Masukkan nama Anda: ";
-    getline(cin, nama); // Membaca input nama yang bisa berisi spasi
+    getline(cin, nama); 
 
     cout << "Masukkan NIM Anda: ";
-    cin >> nim; // Membaca input NIM
-
+    cin >> nim; 
     cout << "\nNama: " << nama << endl;
     cout << "NIM: " << nim << endl;
 
