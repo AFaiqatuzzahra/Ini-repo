@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Rekursif</h1>
+# <h1 align="center">Laporan Praktikum Modul Graph and Tree</h1>
 <p align="center">Afifah Faiqatuzzahra</p>
 
 ## Dasar Teori
