@@ -5,7 +5,6 @@
 
 using namespace std;
 
-// Struktur Node
 struct Node {
     string data;
     Node* left;
@@ -14,7 +13,6 @@ struct Node {
     Node(string val) : data(val), left(nullptr), right(nullptr) {}
 };
 
-// Fungsi untuk menambahkan node ke tree
 Node* insert(Node* root, string data) {
     if (root == nullptr) {
         return new Node(data);
@@ -43,7 +41,6 @@ Node* insert(Node* root, string data) {
     return root;
 }
 
-// Fungsi untuk mencari node dalam tree
 Node* findNode(Node* root, const string& data) {
     if (!root) return nullptr;
     if (root->data == data) return root;
@@ -54,7 +51,6 @@ Node* findNode(Node* root, const string& data) {
     return findNode(root->right, data);
 }
 
-// Fungsi untuk menampilkan child dari node
 void displayChildren(Node* node) {
     if (!node) {
         cout << "Node tidak ditemukan." << endl;
@@ -66,7 +62,6 @@ void displayChildren(Node* node) {
     cout << endl;
 }
 
-// Fungsi untuk menampilkan descendant dari node
 void displayDescendants(Node* node) {
     if (!node) {
         cout << "Node tidak ditemukan." << endl;
@@ -99,7 +94,7 @@ int main() {
         cout << "4. Keluar\n";
         cout << "Pilih opsi: ";
         cin >> choice;
-        cin.ignore(); // Mengabaikan karakter newline
+        cin.ignore(); 
 
         switch (choice) {
         case 1:
