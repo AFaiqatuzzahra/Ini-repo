@@ -37,6 +37,6 @@ int main() {
 
     bubble_sort(a, length);
 
-    cout << "\ndata sesudah:" << endl;
+    cout << "data sesudah:" << endl;
     print_array(a, length);
 }
