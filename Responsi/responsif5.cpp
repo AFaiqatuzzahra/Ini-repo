@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <unordered_map>
 
 std::vector<int> twoSum(const std::vector<int>& angka, int target) {
     std::unordered_map<int, int> angka_to_index;
