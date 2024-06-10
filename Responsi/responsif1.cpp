@@ -1,27 +1,17 @@
 #include <iostream>
 
-using namespace std;
-
 int main() {
-    int n = 6;
-    int data[n] = {1, 2, 3, 4, 5, 5};
+    int data[] = {1, 2, 3, 4, 5, 5};
+    int n = sizeof(data) / sizeof(data[0]);
     int cari = 5;
-    int ketemu = false;
-    int i;
 
-    for (i = 0; i < n; i++) {
-        if(data[i] == cari) {
-            ketemu = true;
-            break;
+    std::cout << "Angka " << cari << " ditemukan pada indeks: ";
+    for (int i = 0; i < n; ++i) {
+        if (data[i] == cari) {
+            std::cout << i << " ";
         }
     }
-        cout << " Program Sequential Search " << endl;
-        cout << " data: {1, 2, 3, 4, 5, 5}"<< endl;
+    std::cout << std::endl;
 
-    if (ketemu){
-        cout << "\n angka "<< cari << " ditemukan pada indeks ke-" << i << endl;
-    } else {
-        cout << cari << " tidak dapat ditemukan pada data." << endl;
-    }
     return 0;
 }
